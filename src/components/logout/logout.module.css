@@ -1,0 +1,12 @@
+.logout {
+  border: none;
+  background-color: rgba(160, 22, 22, 0.969);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in;
+}
+
+.logout:hover {
+  opacity: 0.8;
+}

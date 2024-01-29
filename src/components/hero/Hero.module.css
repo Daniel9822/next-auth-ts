@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+}
+
+.text p {
+  color: inherit;
+  margin: 0;
+}
+
+.text h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.text h1 span {
+  color: #bbb;
+  font-weight: bold;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 10px;
+  animation: move alternate 3s infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(15px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
