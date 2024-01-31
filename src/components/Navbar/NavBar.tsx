@@ -16,8 +16,8 @@ const links = [
   },
   {
     id: 3,
-    title: 'Contact',
-    url: '/contact'
+    title: 'Form',
+    url: '/form/stepOne'
   },
   {
     id: 4,
