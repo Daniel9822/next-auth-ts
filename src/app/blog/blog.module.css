@@ -1,0 +1,14 @@
+.blogContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: inherit;
+}
