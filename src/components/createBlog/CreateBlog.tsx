@@ -23,6 +23,10 @@ export default function CreateBlog() {
     })
   }
 
+  const handleTextarea = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setblog({...blog, desc: e.target.value})
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!session?.user) return
@@ -48,7 +52,7 @@ export default function CreateBlog() {
 
         <label htmlFor='desc'>Description</label>
         <textarea
-          onChange={handleBlog}
+          onChange={handleTextarea}
           name='desc'
           id='desc'
           placeholder='Description'
