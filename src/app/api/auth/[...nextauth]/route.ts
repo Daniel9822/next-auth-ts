@@ -9,7 +9,7 @@ import { initializeApp } from 'firebase/app'
 const app = initializeApp(firebaseConfig)
 
 interface MyCredentials extends Credential {
-  email: string,
+  email: string
   password: string
 }
 
@@ -22,18 +22,25 @@ const handler = NextAuth({
     Credentials({
       id: 'credentials',
       name: 'Credentials',
+       // @ts-ignore
       async authorize(credentials: MyCredentials) {
-        const { email, password } = credentials
+        if (!credentials) return null
 
-        const auth = getAuth()
+        const { email, password } = credentials as MyCredentials
+
         try {
-          const { user } = await signInWithEmailAndPassword(auth, email, password)
+          const auth = getAuth()
+          const { user } = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          )
 
-          if(user) {
+          if (user) {
             return user
           }
         } catch (error) {
-          throw new Error('invalid user')
+          return null
         }
       }
     })
