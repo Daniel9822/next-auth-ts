@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import styles from './dashboar.module.css'
 import { mock } from './mock'
+import CreateBlog from '@/components/createBlog/CreateBlog'
 
 export default function Dashboard() {
   return (
@@ -18,20 +18,7 @@ export default function Dashboard() {
         </aside>
       </article>
 
-      <article className={styles.formContainer}>
-        <h4>Crear publicacion</h4>
-        <form className={styles.form} action=''>
-          <label htmlFor='title'>Title</label>
-          <input type='text' id='title' placeholder='title' />
-          <label htmlFor='desc'>Description</label>
-          <textarea name='' id='desc' placeholder='Description'></textarea>
-
-          <label htmlFor='img'>Image url</label>
-          <input type='text' id='img' />
-
-          <button className={styles.btn}>Publicar</button>
-        </form>
-      </article>
+      <CreateBlog/>
     </section>
   )
 }
