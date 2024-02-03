@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: 'Blog-auth | blogs',
   description: 'all blogs the users',
 }
- 
 
 export default async function BlogPage() {
   const data = await getAllBlog()
