@@ -9,7 +9,8 @@ export const createBlog = async (blog: Blogs) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(blog)
+      body: JSON.stringify(blog),
+      cache: 'no-store'
     })
 
     const data = await response.json()
@@ -22,7 +23,7 @@ export const createBlog = async (blog: Blogs) => {
 
 export const getAllBlog = async (): Promise<Blogs[]> => {
   try {
-    const response = await fetch(`${PATH}/blog`)
+    const response = await fetch(`${PATH}/blog`, { cache: 'no-store' })
     const data = response.json()
     return data
   } catch (error: any) {
@@ -33,11 +34,11 @@ export const getAllBlog = async (): Promise<Blogs[]> => {
 
 export const getOneBlog = async (id: string): Promise<Blogs> => {
   try {
-    const response = await fetch(`${PATH}/blog/${id}`)
+    const response = await fetch(`${PATH}/blog/${id}`, { cache: 'no-store' })
     const data = await response.json()
     return data
   } catch (error) {
-    console.log(error);
+    console.log(error)
     throw new Error('somenthing went wrong')
   }
 }
