@@ -1,3 +1,5 @@
+const PATH = process.env.NEXT_PUBLIC_API_URL
+
 export const registerUser = async ({
   email,
   password
@@ -6,12 +8,13 @@ export const registerUser = async ({
   password: string
 }) => {
   try {
-    const response = await fetch('http://localhost:3000/api/register', {
+    const response = await fetch(`${PATH}/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
+      cache: 'no-store'
     })
 
     const user = await response.json()
