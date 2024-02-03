@@ -1,9 +1,8 @@
 import blog from '@/models/blog'
 import { connect } from '@/utils/mongooseConnect'
-import { NextApiRequest } from 'next'
 import { NextResponse } from 'next/server'
 
-export async function GET(request: NextApiRequest) {
+export async function GET(request: Request) {
   const url = request.url
 
   if (!url) throw new Error('id is require')
