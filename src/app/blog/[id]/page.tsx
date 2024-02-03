@@ -2,11 +2,14 @@ import { getOneBlog } from '@/services/blogs.services'
 import styles from '../blog.module.css'
 import { Metadata, ResolvingMetadata } from 'next'
 
+interface Props {
+  params: { id: string }
+}
+
 export async function generateMetadata(
-  { params },
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  // read route params
   const data = await getOneBlog(params.id)
 
   return {
@@ -16,7 +19,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function BlogId({ params }) {
+export default async function BlogId({ params }: Props) {
   const data = await getOneBlog(params.id)
 
   return (
