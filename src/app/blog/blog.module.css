@@ -12,3 +12,24 @@
   font-size: 20px;
   color: inherit;
 }
+
+.blogImage {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: 20px;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.author {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(32, 22, 222, 0.599);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
