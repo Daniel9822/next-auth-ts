@@ -18,7 +18,7 @@ export default function ParticlesComponentBounce() {
   }, [])
 
   let particlesLoaded = async (container?: Container): Promise<void> => {}
-
+   // @ts-ignore
   let options: ISourceOptions = useMemo(
     () => ({
       background: {
