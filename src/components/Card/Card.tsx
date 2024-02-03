@@ -5,7 +5,7 @@ interface Props {
   title: string
   img: string
   author: string
-  id: string
+  id?: string
 }
 
 export default function Card({ title, img, author, id }: Props) {
