@@ -8,9 +8,8 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   try {
     await connect()
-    console.log(data);
     const isExist = await Form.findOne({ userId: data.userId })
-    console.log(isExist)
+  
     if (isExist?._id) {
       const { _id: id } = isExist
       const updateForm = await update(id, data)
@@ -22,7 +21,6 @@ export async function POST(request: Request): Promise<NextResponse> {
       status: 201
     })
   } catch (error: any) {
-    console.log(error.message)
     return new NextResponse(error.message, {
       status: 400
     })
