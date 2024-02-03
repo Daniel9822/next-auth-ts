@@ -49,7 +49,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   height: 100vh;
 }
 
