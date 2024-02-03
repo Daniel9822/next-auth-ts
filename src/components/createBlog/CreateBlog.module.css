@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  gap: 10px;
+  min-width: 400px;
+}
+
+.formContainer {
+  width: 40%;
+  height: 80vh;
+}
+
+.form input {
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.form textarea {
+  resize: none;
+  height: 100px;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.form label {
+  color: #bbb;
+}
+
+.btn {
+  padding: 10px;
+  background-color: rgba(0, 0, 255, 0.352);
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
