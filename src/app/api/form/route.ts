@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import Form from '@/models/form'
 import { connect } from '@/utils/mongooseConnect'
-import { NextApiRequest } from 'next'
 
 export async function POST(request: Request): Promise<NextResponse> {
   const data = await request.json()
@@ -38,7 +37,7 @@ const update = async (id: string, data) => {
   }
 }
 
-export async function GET(request: NextApiRequest): Promise<NextResponse> {
+export async function GET(request: Request): Promise<NextResponse> {
   const url = request.url
 
   if (!url) return new NextResponse('', { status: 400 })
