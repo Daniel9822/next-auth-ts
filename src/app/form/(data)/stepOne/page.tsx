@@ -27,7 +27,10 @@ export default function StepOne() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const data = await createFormOrUpdate({...info, userId: session?.user?.email})
+    const data = await createFormOrUpdate({
+      ...info,
+      userId: session?.user?.email || ''
+    })
     if (data.error) {
       throw new Error('somenting went wrong')
     }
