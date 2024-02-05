@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import Form from '@/models/form'
 import { connect } from '@/utils/mongooseConnect'
+import { FormOneStep, FormStepTwo } from '@/types/type'
 
 export async function POST(request: Request): Promise<NextResponse> {
   const data = await request.json()
@@ -8,7 +9,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   try {
     await connect()
     const isExist = await Form.findOne({ userId: data.userId })
-  
+
     if (isExist?._id) {
       const { _id: id } = isExist
       const updateForm = await update(id, data)
@@ -26,7 +27,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   }
 }
 
-const update = async (id: string, data) => {
+const update = async (id: string, data: FormOneStep | FormStepTwo) => {
   try {
     const isExist = await Form.findByIdAndUpdate({ _id: id }, data, {
       new: true
